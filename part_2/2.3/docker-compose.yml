@@ -1,0 +1,17 @@
+version: '3.5'  
+
+services:
+    fe:
+      image: fe
+      build:
+        context: ../../fe_be_compose/frontend-example-docker
+        dockerfile: Dockerfile
+      ports:
+        - 5000:5000
+    be:
+      image: be
+      build:
+        context: ../../fe_be_compose/backend-example-docker
+        dockerfile: Dockerfile
+      ports:
+        - 8000:8000
